@@ -2,8 +2,10 @@ package ru.netology.domain;
 
 public class Radio {
 
+    private int id;
     private int currentRadioStation; //текущая радиостанция
     private int currentVolume; // текущая громкость
+
 
     //+установка(set) канала радиостанции
     public void setCurrentRadioStation(int currentRadioStation) {
