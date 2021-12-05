@@ -2,12 +2,11 @@ package ru.netology.domain;
 
 public class Radio {
 
-    private int id;
     private int currentRadioStation; //текущая радиостанция
-    private int currentVolume; // текущая громкость
+    private int currentVolume;
 
 
-    //+установка(set) канала радиостанции
+    //++установка(set) канала радиостанции
     public void setCurrentRadioStation(int currentRadioStation) {
         if (currentRadioStation < 0) { //если текущ.станция меньше 0, то выходи
             return;
@@ -28,31 +27,30 @@ public class Radio {
         }
     }
 
-    //кнопка prev-предыдущая станция
+    //++кнопка prev-предыдущая станция
     public void prevRadioStation() {
         if (currentRadioStation > 0) {
             currentRadioStation = currentRadioStation - 1;
-        }
-        if (currentRadioStation <= 0) {
+        } else {
             currentRadioStation = 9;
         }
     }
 
-    //+возврвщаем значение поля радиостанции
+    //++возврвщаем значение поля радиостанции
     public int getCurrentRadioStation() { //отдает текущую станцию сам, не лезем сами
         return currentRadioStation;
     }
 
 
-    //+выставление уровня звука
-    public void setCurrentVolume(int сurrentVolume) {
-        if (сurrentVolume < 0) { //если текущ.станция меньше 0, то выходи
+    //++выставление уровня звука
+    public void setCurrentVolume(int currentVolume) {
+        if (currentVolume < 0) { //если текущ.станция меньше 0, то выходи
             return;
         }
-        if (сurrentVolume > 10) { //если текущ.станция больше 9, то выходи
+        if (currentVolume > 10) { //если текущ.станция больше 9, то выходи
             return;
         }
-        this.currentVolume = сurrentVolume; // если 0-9, то меняем память станцию
+        this.currentVolume = currentVolume; // если 0-9, то меняем память станцию
     }
 
     //MaxVolume
@@ -65,7 +63,7 @@ public class Radio {
         currentVolume = 0;
     }
 
-    ////+возврвщаем значение уровня звука
+    ////++возврвщаем значение уровня звука
     public int getCurrentVolume() {
         return currentVolume; //отдает текущую станцию
     }
