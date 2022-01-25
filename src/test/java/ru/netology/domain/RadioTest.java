@@ -56,7 +56,7 @@ class RadioTest {
 
     @Test //граничные значения 0
     public void shouldZeroRadioStation() {
-        Radio rad = new Radio(); //создалиРадиоСТекущейРадиостанцией 0
+        Radio rad = new Radio(); //создалиРадиоСТекущ.Радиост 0
 
         rad.setCurrentRadioStation(0);
 
