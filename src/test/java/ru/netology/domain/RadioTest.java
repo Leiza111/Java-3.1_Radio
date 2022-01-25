@@ -4,7 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-public class RadioTest {
+class RadioTest {
+    Radio rad = new Radio();
+
       @Test //выставление допустимой радиостанции
     public void shouldCurrentRadioStation() {
         Radio rad = new Radio(); //создали pадио c текущейРадиостанцией 0
@@ -21,7 +23,7 @@ public class RadioTest {
     public void shouldAboveTheMaxRadioStation() {
         Radio rad = new Radio(); //создалиРадиоСТекущейРадиостанцией 0
 
-        rad.setCurrentRadioStation(17);
+        rad.setCurrentRadioStation(20);
         int expected = 0; //ожидаемый
         int actual = rad.getCurrentRadioStation(); //фактический
 
