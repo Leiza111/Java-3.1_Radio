@@ -4,10 +4,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class RadioTest {
-    Radio rad = new Radio();
-
-    @Test //выставление допустимой радиостанции
+public class RadioTest {
+      @Test //выставление допустимой радиостанции
     public void shouldCurrentRadioStation() {
         Radio rad = new Radio(); //создали pадио c текущейРадиостанцией 0
 

@@ -5,7 +5,6 @@ public class Radio {
     private int currentRadioStation; //текущая радиостанция
     private int currentVolume;
 
-
     //++установка(set) канала радиостанции
     public void setCurrentRadioStation(int currentRadioStation) {
         if (currentRadioStation < 0) { //если текущ.станция меньше 0, то выходи
