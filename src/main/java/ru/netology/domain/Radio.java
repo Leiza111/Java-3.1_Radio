@@ -3,68 +3,99 @@ package ru.netology.domain;
 public class Radio {
 
     private int currentRadioStation; //текущая радиостанция
-    private int currentVolume; // текущая громкость
+    private int currentVolume;
+    private int numberStation = 10;
 
-    //+установка(set) канала радиостанции
-    public void setCurrentRadioStation(int currentRadioStation) {
-        if (currentRadioStation < 0) { //если текущ.станция меньше 0, то выходи
+    //конструкторы
+    public Radio() { //конструктор без параметров+
+    }
+
+    public Radio(int numberStation) { //конст.с с параметром+
+        this.numberStation = numberStation;
+    }
+
+
+    //get/set numberStation
+    public int getNumberStation() {
+        return numberStation;
+    }
+
+    public void setNumberStation(int numberStation) {
+        if (numberStation < 0) {
             return;
         }
-        if (currentRadioStation > 9) { //если текущ.станция больше 9, то выходи
+        this.numberStation = numberStation;
+    }
+
+    //get/set currentRadioStation
+    public int getCurrentRadioStation() { //отдает текущую станцию сам, не лезем сами
+        return currentRadioStation;
+    }
+
+    public void setCurrentRadioStation(int currentRadioStation) {
+        if (currentRadioStation > numberStation - 1) {
+            return;
+        }
+        if (currentRadioStation < 0) {
             return;
         }
         this.currentRadioStation = currentRadioStation; // если 0-9, то меняем память станцию
     }
 
+
     //кнопка next-следующая станция
     public void nextRadioStation() {
-
-        if (currentRadioStation < 9) {
-            currentRadioStation = currentRadioStation + 1;
+        if (currentRadioStation < numberStation - 1) {
+            currentRadioStation++;
         } else {
             currentRadioStation = 0;
         }
     }
 
-    //кнопка prev-предыдущая станция
+    //++кнопка prev-предыдущая станция
     public void prevRadioStation() {
         if (currentRadioStation > 0) {
+
+            currentRadioStation--;
+        } else {
+            currentRadioStation = numberStation - 1;
+
             currentRadioStation = currentRadioStation - 1;
         } else {
             currentRadioStation = 9;
+
         }
     }
 
-    //+возврвщаем значение поля радиостанции
-    public int getCurrentRadioStation() { //отдает текущую станцию сам, не лезем сами
-        return currentRadioStation;
-    }
 
-
-    //+выставление уровня звука
-    public void setCurrentVolume(int сurrentVolume) {
-        if (сurrentVolume < 0) { //если текущ.станция меньше 0, то выходи
-            return;
-        }
-        if (сurrentVolume > 10) { //если текущ.станция больше 9, то выходи
-            return;
-        }
-        this.currentVolume = сurrentVolume; // если 0-9, то меняем память станцию
-    }
-
-    //MaxVolume
-    public void setToMaxVolume() {
-        currentVolume = 10;
-    }
-
-    //MinVolume
-    public void setToMinVolume() {
-        currentVolume = 0;
-    }
-
-    ////+возврвщаем значение уровня звука
+    //get/set currentVolume
     public int getCurrentVolume() {
         return currentVolume; //отдает текущую станцию
+    }
+
+    public void setCurrentVolume(int currentVolume) {
+        if (currentVolume > 100) { //если текущ.станция больше 100, то выходи
+            return;
+        }
+        if (currentVolume < 0) { //если текущ.станция меньше 0, то выходи
+            return;
+        }
+        this.currentVolume = currentVolume; // если 0-9, то меняем память станцию
+    }
+
+
+    //Увеличение громкости
+    public void increaseVolume() {
+        if (currentVolume < 100) {
+            currentVolume++;
+        }
+    }
+
+    //Уменьшение громкости
+    public void reducеVolume() {
+        if (currentVolume > 0) {
+        }
+        currentVolume--;
     }
 }
 
