@@ -55,9 +55,15 @@ public class Radio {
     //++кнопка prev-предыдущая станция
     public void prevRadioStation() {
         if (currentRadioStation > 0) {
+
             currentRadioStation--;
         } else {
             currentRadioStation = numberStation - 1;
+
+            currentRadioStation = currentRadioStation - 1;
+        } else {
+            currentRadioStation = 9;
+
         }
     }
 
