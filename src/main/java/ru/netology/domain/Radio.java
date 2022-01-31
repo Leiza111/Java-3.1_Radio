@@ -59,11 +59,6 @@ public class Radio {
             currentRadioStation--;
         } else {
             currentRadioStation = numberStation - 1;
-
-            currentRadioStation = currentRadioStation - 1;
-        } else {
-            currentRadioStation = 9;
-
         }
     }
 
